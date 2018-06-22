@@ -1,0 +1,6 @@
+<div class="chatcontrol">
+
+  <input type="text" class="form-control chatinput" [(ngModel)]="message.content" ng-keyup="$event.keyCode == 13 ? sendMessage() : null"/>
+  <button id="sendmsg" class="btn btn-success sendbtn" (click)="sendMessage()">Send</button>
+ 
+</div>
