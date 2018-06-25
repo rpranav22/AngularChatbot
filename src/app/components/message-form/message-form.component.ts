@@ -71,7 +71,7 @@ export class MessageFormComponent implements OnInit {
     console.log(body.get('msg'))
 
     
-    const data = this.httpClient.post ('http://127.0.0.1:5004/message', body, {headers: headers})
+    const data = this.httpClient.post ('http://127.0.0.1:5004/message', body, {withCredentials: true})
     .subscribe(
       res => {
         const rec = res as JSON
