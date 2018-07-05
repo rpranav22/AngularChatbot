@@ -1,0 +1,55 @@
+<!-- <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic">
+
+
+<link rel="stylesheet" href="//cdn.rawgit.com/necolas/normalize.css/master/normalize.css">
+
+
+<link rel="stylesheet" href="//cdn.rawgit.com/milligram/milligram/master/dist/milligram.min.css"> -->
+<style>
+.redtype.mat-chip {
+    background-color: red;
+  }
+  .greentype.mat-chip {
+    background-color: green;
+  }
+  .orangetype.mat-chip {
+    background-color: orange;
+  }
+  .greytype.mat-chip {
+    background-color: grey;
+  }
+ 
+  </style>
+
+<div class="container">
+        <h1>Bot</h1>
+        
+<ng-container *ngFor="let message of messages| async">
+<div class="message" [ngClass]="{'from': message.sentBy==='bot',
+                                    'to': message.sentBy === 'user'}">
+                                    <span *ngIf="(message.sentBy  | uppercase) ==='BOT'" [innerHTML]="message.content" ></span>
+                                    <span *ngIf="(message.sentBy | uppercase)==='USER'" [innerHTML]="message.content"></span>       
+<div *ngIf="(message.messageType  | uppercase)==='TOPIC'">
+
+        <mat-chip-list  >
+                <mat-chip *ngFor="let topic of topics" [selectable]="selectable" style="margin: 5px 0 0 5px;"
+                (click)="topicClick(topic)"
+                [removable]="removable" [innerHTML]="topic.metaData?.title" 
+                (selectionChange)="changeSelected($event)"
+                [class.redtype]="topic.topic_user_correlation.priority==='HIGH'"
+                [class.orangetype]="topic.topic_user_correlation.priority==='MEDIUM'"
+                [class.greytype]="topic.topic_user_correlation.backlog_count===0"
+                [class.greentype]="topic.topic_user_correlation.backlog_count>0 && topic.topic_user_correlation.priority!=='HIGH'  && topic.topic_user_correlation.priority!=='MEDIUM'" >
+                Count: {{topic.topic_user_correlation.backlog_count}}
+                </mat-chip>
+     
+        </mat-chip-list>
+</div>
+</div>
+</ng-container>
+
+<Span for="nameField">Messages</Span>
+<input [(ngModel)]="formValue" (keyup.enter)="sendMessage()" type="text">
+<button (click)="sendMessage()">Send</button>
+</div>
+      

@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Angularexample</title>
+  <base href="/">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/css/bootstrap.min.css"
+  integrity="sha384-AysaV+vQoT3kOAXZkl02PThvDr8HYKPZhNT5h/CXfBThSRXQ6jW5DO2ekP5ViFdi" crossorigin="anonymous">
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic">
+
+
+<link rel="stylesheet" href="//cdn.rawgit.com/necolas/normalize.css/master/normalize.css">
+
+
+<link rel="stylesheet" href="//cdn.rawgit.com/milligram/milligram/master/dist/milligram.min.css"> 
+  <style type="text/css">body {
+      margin: 0;
+      font-family: Roboto, sans-serif;
+    }
+    
+    mat-card {
+      max-width: 80%;
+      margin: 2em auto;
+      text-align: center;
+    }
+    
+    mat-toolbar-row {
+      justify-content: space-between;
+    }
+    .redtype.mat-chip {
+    background-color: red;
+  }
+  .greentype.mat-chip {
+    background-color: green;
+  }
+  .orangetype.mat-chip {
+    background-color: orange;
+  }
+  .greytype.mat-chip {
+    background-color: grey;
+  }
+    .done {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      color: white;
+    }
+    .message {
+    border-radius: 50px;
+    margin: 0 15px 10px;
+    padding: 15px 20px;
+    position: relative;
+}
+.message.to {
+    background-color: #2095FE;
+    color: #fff;
+    margin-left: 100px;
+    text-align: right;
+}
+.message.from {
+    background-color: #E5E4E9;
+    color: #363636;
+    margin-right: 100px;
+
+}
+.message.to + .message.to,
+.message.from + .message.from {
+margin-top: -10px;
+}
+.subtitle {
+    border: 0;
+    font-size: 14px;
+    box-shadow:none !important;
+    color: #fff;
+    border-radius: 5px;
+    padding: 5px 5px;    
+    text-align: center;
+  }
+  .subtitle-blue {
+    position:relative;animation:animatetop 0.4s;
+    background-color: #4990e2;
+  }
+  .subtitle-red {
+    position:relative;animation:animatetop 0.4s;
+    background-color: red;
+  }
+  .subtitle-yellow {
+    position:relative;animation:animatetop 0.4s;
+    background-color: orange;
+  }
+  .subtitle-green {
+    transform-origin: 100% 50%;
+    animation: jump 1s linear alternate infinite;
+    background-color: green; 
+  }
+  .subtitle-grey {
+    position:relative;animation:animatetop 0.4s;
+    background-color: grey;
+  }
+
+  @keyframes revealText {
+  0% {
+     width:0%;
+
+
+   }
+  100% {
+     width:100%;
+   
+  
+  }
+}
+@keyframes jump {
+  100% {transform: translate3d(0,100%,0) scale3d(1,.7,1);}
+}
+
+@keyframes animatetop{from{top:-200px;opacity:0} to{top:0;opacity:1}}
+    </style>
+</head>
+<body>
+  <app-root></app-root>
+  
+</body>
+</html>

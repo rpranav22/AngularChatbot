@@ -1,0 +1,19 @@
+{
+  "extends": "../tsconfig.json",
+  "compilerOptions": {
+    "outDir": "../out-tsc/app",
+    "baseUrl": "./",
+    "module": "es2015",
+    "types": []
+  },
+  "exclude": [
+    "test.ts",
+    "**/*.spec.ts"
+  ],
+  "files": [
+    "../node_modules/api-ai-javascript/index.ts",
+    "../node_modules/api-ai-javascript/index.ts",
+    "../src/main.ts",
+    "../src/polyfills.ts"
+  ]  
+}
