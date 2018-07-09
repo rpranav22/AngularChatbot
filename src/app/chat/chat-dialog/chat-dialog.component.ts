@@ -45,18 +45,19 @@ export class ChatDialogComponent implements OnInit {
    //this.chat.talk("who are you")
     this.messages = this.chat.conversation.asObservable().scan((acc, val) => acc.concat(val));
     this.retrieveTopics();
-    // const msg = "send id"
-    const msg = "id 3029"
+    const msg = "send id"
+    // const msg = "id 3029"
     const userMessage = new Message(msg, 'user','text');
     
     this.chat.update(userMessage);
     this.chat._client.textRequest(msg)
     .then(res =>{
       const speech = res.result.fulfillment.speech;
-      const action = res.result.action;;
+      // const action = res.result.action;
       var botMessage = new Message(speech, 'bot', 'text')
-          console.log(botMessage);
-          this.chat.update(botMessage);
+      console.log(botMessage);
+      this.chat.update(botMessage);
+      
     })
    // this.sayHi();
   }
